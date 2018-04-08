@@ -1,33 +1,41 @@
 {% extends 'base.html' %}
 {% block content %}        
-        <h1>Signup</h1>
+        <h1 id='signup'>Signup</h1>
         <form method='POST'>
             <table>
                 <tr>
-                <!--    <td><label for='username'>Username</label></td> -->
+                    <td><label for='username'>Username</label></td>
+                </tr>
+                <tr> 
                     <td>
-                        <input name='username' type='text' value='{{username}}' placeholder="Username (required)" />
+                        <input name='username' type='text' value='{{username}}' placeholder="(required)" />
                         <span class="error">{{username_error}}</span>
                     </td>
                 </tr>
                 <tr>
-                <!--    <td><lable for='password'>Password</lable></td> -->
+                    <td><lable for='password'>Password</lable></td> 
+                </tr>
+                <tr>
                     <td>
-                        <input name='password' type='password' placeholder="Password (required)" />
+                        <input name='password' type='password' placeholder="(required)" />
                         <span class='error'>{{password_error}}</span>
                     </td> 
                 </tr>
                 <tr>
-                <!--    <td><lable for='verify'>Verify Password</lable></td> -->
+                    <td><lable for='verify'>Verify Password</lable></td> 
+                </tr>
+                <tr>
                     <td>
-                        <input name='verify' type='password' placeholder="Verify Password (required)" />
+                        <input name='verify' type='password' placeholder="(required)" />
                         <span class='error'>{{verify_error}}</span>
                     </td>
                 </tr>
                 <tr>
-                <!--    <td><lable for='email'>Email (optional)</lable></td> -->
+                    <td><lable for='email'>Email</lable></td> 
+                </tr>
+                <tr>
                     <td>
-                        <input name='email' type='text' value='{{email}}' placeholder="Email (optional)"/>
+                        <input name='email' type='text' value='{{email}}' placeholder="(optional)"/>
                         <span class='error'>{{email_error}}</span>
                     </td>
                 </tr>
