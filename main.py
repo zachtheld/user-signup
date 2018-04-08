@@ -62,13 +62,12 @@ def validate_user_inputs():
         verify = '' 
     elif not char(password):
         password_error = 'Required'
-
+        password = ''
     elif not input_length(password) and not input_length(verify):
         password_error = 'Password must be between 3 and 20 characters'
         verify_error = password_error
         password = ''
-        verify = ''
-        
+        verify = ''    
     elif ' ' in password and ' ' in verify:
         password_error = 'Password cannot contain spaces'
         verify_error = password_error
