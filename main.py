@@ -5,9 +5,6 @@ import os
 app = Flask(__name__)
 app.config['DEBUG'] = True
 
-
-
-
 @app.route('/signup')
 def display_signup_form():
     return render_template('signup_form.html', title='User Signup') 
@@ -66,7 +63,6 @@ def validate_user_inputs():
     elif not char(password):
         password_error = 'Required'
 
-    
     elif not input_length(password) and not input_length(verify):
         password_error = 'Password must be between 3 and 20 characters'
         verify_error = password_error
@@ -82,15 +78,11 @@ def validate_user_inputs():
         password_error = 'Password cannot contain spaces'
         verify_error = 'Please enter a matching password'
      
-    #verify password validation
-    
+    #verify password matches password
     if verify != password:
         verify_error = 'Please enter a matching password'
         verify = ''
- 
-    
-    
-    
+
     #email validation
     if char(email):
         if not email_symbol(email):
@@ -104,7 +96,6 @@ def validate_user_inputs():
         elif not input_length(email):
             email_error = 'A valid email must be between 3 and 20 characters'
 
-            
     if not username_error and not password_error and not verify_error and not email_error:
         username = username
         return redirect('welcome?username={0}'.format(username))
@@ -118,6 +109,5 @@ def validate_user_inputs():
 def welcome_page():
     username = request.args.get('username')
     return render_template('welcome.html',title='Welcome', username=username)
-
 
 app.run()
